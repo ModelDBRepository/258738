@@ -1,0 +1,34 @@
+// $Id: init.hoc,v 1.4 2013/02/11 20:35:42 samn Exp $
+
+xwindows=1
+show_panel=0
+pwd()
+load_file("xgetargs.hoc")
+load_file("grvec.hoc")
+load_file("labels.hoc")
+load_file("syncode.hoc")
+
+load_file("decnqs.hoc")
+if (! VECST_INSTALLED) install_vecst()
+if (! INSTALLED_stats) install_stats()
+
+//install_PLACE()
+//install_clust()
+//transpose_clust=0
+
+load_file("nqs_utils.hoc")
+
+//load_file("intfsw.hoc")
+
+load_file("drline.hoc")
+load_file("stats.hoc")
+
+//load_file("infot.hoc")
+
+load_file("decmat.hoc")
+
+load_file("updown.hoc")
+if (! UPDOWN_INSTALLED) install_updown()
+if (! INSTALLED_sn) install_sn()
+
+print "loaded init.hoc"
