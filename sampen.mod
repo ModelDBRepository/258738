@@ -14,10 +14,6 @@ PARAMETER {
 
 VERBATIM
 
-extern int vector_instance_px();
-extern void* vector_arg();
-extern double *vector_newsize();
-
 /* file: sampen.c	Doug Lake	2 August 2002
 			Last revised:	1 November 2004 (by george@mit.edu) 1.2
 -------------------------------------------------------------------------------
@@ -68,6 +64,7 @@ Additional information is available at:
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
+#include <misc.h>
 
 int sampen(double *y, int mm, double r, int n, double* est,long* run,long* lastrun,double* A,double* B,double* p);
 int sampen2(double *y, int mm, double r, int n, double* est, double* stdev);

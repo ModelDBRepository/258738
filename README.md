@@ -45,3 +45,8 @@ Then inside python:
 
 You should get a figure similar to the one below:
 ![Alt text](fig1sample.png?raw=true "Optional Title")
+
+Changelog
+---------
+2022-12: Updated MOD files to contain valid C++ and be compatible with
+the upcoming versions 8.2 and 9.0 of NEURON.
