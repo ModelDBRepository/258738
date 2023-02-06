@@ -19,28 +19,7 @@ VERBATIM
 #include <math.h>
 #include <limits.h> // contains LONG_MAX 
 #include <sys/time.h> 
-extern double* hoc_pgetarg();
-extern double hoc_call_func(Symbol*, int narg);
-extern FILE* hoc_obj_file_arg(int narg);
-extern Object** hoc_objgetarg();
-extern void vector_resize();
-extern int vector_instance_px();
-extern void* vector_arg();
-extern double* vector_vec();
-extern double hoc_epsilon;
-extern double chkarg();
-extern void set_seed();
-extern int ivoc_list_count(Object*);
-extern Object* ivoc_list_item(Object*, int);
-extern int hoc_is_double_arg(int narg);
-extern char* hoc_object_name(Object*);
-char ** hoc_pgargstr();
-int list_vector_px();
-int list_vector_px2();
-int list_vector_px3();
-double *list_vector_resize();
-int ismono1();
-static void hxe() { hoc_execerror("",0); }
+#include "misc.h"
 static void hxf(void *ptr) { free(ptr); hoc_execerror("",0); }
 ENDVERBATIM
 
@@ -72,7 +51,7 @@ static double updown (void* vv) {
   int i, k, m, n, nqsz, nsrc, jj[UDSL], f[UDSL], lc, dsz[UDSL], nqmax, thsz, lc2, done, dbn;
   double *src, *tvec, *th, *dest[UDSL], *nq[UDNQ], *tmp, *dbx, lt, thdist;
   Object *ob, *ob2;
-  void *vvd[UDSL], *vvth, *vnq[UDNQ];
+  IvocVect *vvd[UDSL], *vvth, *vnq[UDNQ];
   //** read in vectors and verify sizes, etc
   nsrc = vector_instance_px(vv, &src); // trace to analyze
   thsz = vector_arg_px(1, &th);        // vector of thresholds to check
